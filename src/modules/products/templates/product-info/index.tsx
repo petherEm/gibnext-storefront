@@ -33,9 +33,7 @@ const ProductInfo = ({ product, countryCode }: ProductInfoProps) => {
           className="text-medium text-ui-fg-subtle"
           data-testid="product-description"
         >
-          {countryCode === "fr"
-            ? product?.metadata?.FRDesc
-            : product.description}
+          {product.description}
         </Text>
       </div>
     </div>
