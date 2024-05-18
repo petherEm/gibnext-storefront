@@ -15,6 +15,6 @@ export const getDictionary = async (locale: string): Promise<any> => {
   if (dictionaries[locale]) {
     return dictionaries[locale]()
   } else {
-    throw new Error(`No dictionary found for locale: ${locale}`)
+    return dictionaries["en"]() // Fallback to English
   }
 }
