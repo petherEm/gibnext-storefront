@@ -1,7 +1,6 @@
-//@ts-nocheck
 import "server-only"
 
-const dictionaries = {
+const dictionaries: { [key: string]: () => Promise<any> } = {
   en: () =>
     import("./dictionaries/en/common.json").then((module) => module.default),
   fr: () =>
@@ -12,4 +11,10 @@ const dictionaries = {
     import("./dictionaries/pl/common.json").then((module) => module.default),
 }
 
-export const getDictionary = async (locale: string) => dictionaries[locale]()
+export const getDictionary = async (locale: string): Promise<any> => {
+  if (dictionaries[locale]) {
+    return dictionaries[locale]()
+  } else {
+    throw new Error(`No dictionary found for locale: ${locale}`)
+  }
+}
