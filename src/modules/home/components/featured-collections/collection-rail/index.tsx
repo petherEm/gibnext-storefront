@@ -22,7 +22,6 @@ export default function CollectionRail({
   // count products in each collection
   const count = products.length
 
-  console.log("collection", collection)
   return (
     <div className="content-container py-12 small:py-24">
       <div className="flex flex-col mb-8">

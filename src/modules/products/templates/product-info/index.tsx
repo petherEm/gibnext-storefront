@@ -8,8 +8,6 @@ type ProductInfoProps = {
 }
 
 const ProductInfo = ({ product, countryCode }: ProductInfoProps) => {
-  console.log("CountryCode is", countryCode)
-
   return (
     <div id="product-info">
       <div className="flex flex-col gap-y-4 lg:max-w-[500px] mx-auto">

@@ -11,9 +11,9 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import FeaturedCollections from "@modules/home/components/featured-collections"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Gibbarosa Pre-owned Luxury",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "Pre-owned luxury fashion brands. Discover the future of luxury with our collection of iconic brands. We offer a second life to timeless products that should be treated as true investments.",
 }
 
 const getCollectionsWithProducts = cache(

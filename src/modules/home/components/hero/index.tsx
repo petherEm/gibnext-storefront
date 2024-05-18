@@ -4,6 +4,7 @@ import Image from "next/image"
 
 const Hero = ({ translations }: { translations: any }) => {
   const heroTranslations = translations.Hero
+
   return (
     <section className="font-playfair mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-col-reverse flex-wrap justify-between md:flex-row md:mb-16">
