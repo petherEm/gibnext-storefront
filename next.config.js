@@ -29,6 +29,10 @@ const nextConfig = withStoreConfig({
         protocol: "https",
         hostname: "gibbarosa.fra1.digitaloceanspaces.com",
       },
+      {
+        protocol: "https",
+        hostname: "gibbarosa.fra1.cdn.digitaloceanspaces.com",
+      },
     ],
   },
 })

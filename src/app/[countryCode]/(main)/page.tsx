@@ -1,11 +1,14 @@
 import { Product } from "@medusajs/medusa"
 import { Metadata } from "next"
-
 import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
-import FeaturedProducts from "@modules/home/components/featured-products"
-import Hero from "@modules/home/components/hero"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
+import { getDictionary } from "./dictionaries"
+import Hero from "@modules/home/components/hero"
+import MidBanner from "@modules/home/components/midbanner/index"
+import Intro from "@modules/home/components/intro"
+import FeaturedProducts from "@modules/home/components/featured-products"
+import FeaturedCollections from "@modules/home/components/featured-collections"
 
 export const metadata: Metadata = {
   title: "Medusa Next.js Starter Template",
@@ -17,7 +20,7 @@ const getCollectionsWithProducts = cache(
   async (
     countryCode: string
   ): Promise<ProductCollectionWithPreviews[] | null> => {
-    const { collections } = await getCollectionsList(0, 3)
+    const { collections } = await getCollectionsList(0, 8)
 
     if (!collections) {
       return null
@@ -61,19 +64,22 @@ export default async function Home({
 }) {
   const collections = await getCollectionsWithProducts(countryCode)
   const region = await getRegion(countryCode)
+  const translations = await getDictionary(countryCode)
 
   if (!collections || !region) {
     return null
   }
-
   return (
     <>
-      <Hero />
+      <Hero translations={translations} />
+      <Intro translations={translations} />
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
+          <MidBanner />
         </ul>
       </div>
+      <FeaturedCollections collections={collections} region={region} />
     </>
   )
 }

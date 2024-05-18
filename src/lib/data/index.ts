@@ -11,7 +11,7 @@ import {
   StorePostCustomersReq,
 } from "@medusajs/medusa"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { cache } from "react"
+import { cache, use } from "react"
 
 import sortProducts from "@lib/util/sort-products"
 import transformProductPreview from "@lib/util/transform-product-preview"

@@ -26,15 +26,17 @@ export default function CheckoutLayout({
           </LocalizedClientLink>
           <LocalizedClientLink
             href="/"
-            className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+            className="font-playfair text-[24px] font-bold txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base"
             data-testid="store-link"
           >
-            Medusa Store
+            Gibbarosa
           </LocalizedClientLink>
           <div className="flex-1 basis-0" />
         </nav>
       </div>
-      <div className="relative" data-testid="checkout-container">{children}</div>
+      <div className="relative" data-testid="checkout-container">
+        {children}
+      </div>
       <div className="py-4 w-full flex items-center justify-center">
         <MedusaCTA />
       </div>

@@ -1,0 +1,44 @@
+{
+    "Hero": {
+        "subheader": "Luksus z drugiej ręki",
+        "title": "Ikoniczne marki",
+        "aboutUs": "Odkryj przyszłość luksusu z naszą kolekcją ikonicznych marek. Oferujemy drugie życie ponadczasowym produktom, które powinny być traktowane jako prawdziwe inwestycje.",
+        "cta": "Dowiedz się więcej"
+    },
+    "Intro": {
+        "subheader": "O Gibbarosa",
+        "title": "Luksus z drugiej ręki",
+        "aboutUs": "Gibbarosa powstała z miłości do historii, dziedzictwa i savoir-faire luksusowych domów mody. Dajemy drugie życie ponadczasowym produktom, które powinny być traktowane jako prawdziwe inwestycje.",
+        "cta": "Dowiedz się więcej"
+    },
+    "Navbar": [
+        {
+            "name": "Nowości",
+            "href": "/"
+        },
+        {
+            "name": "Torebki",
+            "href": "/collections/bags"
+        },
+        {
+            "name": "Biżuteria",
+            "href": "/collections/jewelry"
+        },
+        {
+            "name": "Akcesoria",
+            "href": "/collections/accessories"
+        },
+        {
+            "name": "Obuwie",
+            "href": "/collections/shoes"
+        },
+        {
+            "name": "Marki",
+            "href": "/collections/brands"
+        }
+    ],
+    "Footer": {
+        "privacyPolicy": "Polityka prywatności",
+        "termsOfService": "Warunki korzystania z usługi"
+    }
+}

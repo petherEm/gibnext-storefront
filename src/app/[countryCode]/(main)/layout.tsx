@@ -1,20 +1,27 @@
-import { Metadata } from "next"
-
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
+import { getDictionary } from "./dictionaries"
+import { TranslationProvider } from "../../../lib/context/TranslationContext"
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:8000"
-
-export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+export async function generateStaticParams() {
+  return ["en", "fr", "es", "pl"].map((lang) => ({ countryCode: lang }))
 }
 
-export default async function PageLayout(props: { children: React.ReactNode }) {
+export default async function CountryLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: { countryCode: string }
+}) {
+  const { countryCode } = params
+  const translations = await getDictionary(countryCode)
+
   return (
-    <>
-      <Nav />
-      {props.children}
+    <TranslationProvider countryCode={countryCode} translations={translations}>
+      <Nav translations={translations.Navbar} countryCode={countryCode} />
+      {children}
       <Footer />
-    </>
+    </TranslationProvider>
   )
 }

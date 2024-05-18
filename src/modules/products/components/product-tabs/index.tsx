@@ -10,9 +10,10 @@ import Accordion from "./accordion"
 
 type ProductTabsProps = {
   product: PricedProduct
+  countryCode?: string
 }
 
-const ProductTabs = ({ product }: ProductTabsProps) => {
+const ProductTabs = ({ product, countryCode }: ProductTabsProps) => {
   const tabs = [
     {
       label: "Product Information",
