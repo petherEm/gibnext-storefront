@@ -3,6 +3,7 @@
 import { revalidateTag } from "next/cache"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import { getDictionary } from "./dictionaries"
 
 import { getRegion, updateCart } from "@lib/data"
 
@@ -37,4 +38,8 @@ export async function updateRegion(countryCode: string, currentPath: string) {
 export async function resetOnboardingState(orderId: string) {
   cookies().set("_medusa_onboarding", "false", { maxAge: -1 })
   redirect(`http://localhost:7001/a/orders/${orderId}`)
+}
+
+export async function fetchTranslations(countryCode: string) {
+  return await getDictionary(countryCode)
 }

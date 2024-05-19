@@ -3,7 +3,7 @@ import { Metadata } from "next"
 import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
-import { getDictionary } from "./dictionaries"
+import { getDictionary } from "../../dictionaries"
 import Hero from "@modules/home/components/hero"
 import MidBanner from "@modules/home/components/midbanner/index"
 import Intro from "@modules/home/components/intro"
@@ -75,11 +75,19 @@ export default async function Home({
       <Intro translations={translations} />
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
-          <FeaturedProducts collections={collections} region={region} />
+          <FeaturedProducts
+            collections={collections}
+            region={region}
+            countryCode={countryCode}
+          />
           <MidBanner />
         </ul>
       </div>
-      <FeaturedCollections collections={collections} region={region} />
+      <FeaturedCollections
+        collections={collections}
+        region={region}
+        countryCode={countryCode}
+      />
     </>
   )
 }

@@ -14,6 +14,7 @@ import OptionSelect from "@modules/products/components/option-select"
 
 import MobileActions from "../mobile-actions"
 import ProductPrice from "../product-price"
+import { useTranslation } from "@lib/context/TranslationContext"
 
 type ProductActionsProps = {
   product: PricedProduct
@@ -39,6 +40,8 @@ export default function ProductActions({
   const countryCode = useParams().countryCode as string
 
   const variants = product.variants
+  const translations = useTranslation()
+  const cartButtonsTranslations = translations.CartButtons
 
   // initialize the option state
   useEffect(() => {
@@ -170,11 +173,13 @@ export default function ProductActions({
           isLoading={isAdding}
           data-testid="add-product-button"
         >
-          {!variant
-            ? "Select variant"
-            : !inStock
-            ? "Out of stock"
-            : "Add to cart"}
+          {!variant ? (
+            <>{cartButtonsTranslations.selectVariant}</>
+          ) : !inStock ? (
+            <>{cartButtonsTranslations.outOfStock}</>
+          ) : (
+            <>{cartButtonsTranslations.addToCart}</>
+          )}
         </Button>
         <MobileActions
           product={product}

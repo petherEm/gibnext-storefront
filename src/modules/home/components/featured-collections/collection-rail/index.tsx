@@ -1,19 +1,17 @@
 import { Region } from "@medusajs/medusa"
-import { Text } from "@medusajs/ui"
-
 import Image from "next/image"
-
+import { fetchTranslations } from "app/actions"
 import InteractiveLink from "@modules/common/components/interactive-link"
-import ProductPreview from "@modules/products/components/product-preview"
 import { ProductCollectionWithPreviews } from "types/global"
-import Thumbnail from "@modules/products/components/thumbnail"
 
-export default function CollectionRail({
+export default async function CollectionRail({
   collection,
   region,
+  countryCode,
 }: {
   collection: ProductCollectionWithPreviews
   region: Region
+  countryCode: string
 }) {
   const { products } = collection
   if (!products) {
@@ -21,6 +19,9 @@ export default function CollectionRail({
   }
   // count products in each collection
   const count = products.length
+
+  const translations = await fetchTranslations(countryCode)
+  const viewAllButton = translations.Buttons
 
   return (
     <div className="content-container py-12 small:py-24">
@@ -38,7 +39,7 @@ export default function CollectionRail({
           {collection.title}
         </h1>
         <InteractiveLink href={`/collections/${collection.handle}`}>
-          View all {count}
+          {viewAllButton.viewAll} {count}
         </InteractiveLink>
       </div>
       {/* <ul className="grid grid-cols-2 small:grid-cols-3 gap-x-6 gap-y-24 small:gap-y-36">

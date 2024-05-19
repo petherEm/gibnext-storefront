@@ -2,7 +2,7 @@ import { StoreGetProductsParams } from "@medusajs/medusa"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 
 import { getProductsList, getRegion } from "@lib/data"
-
+import { fetchTranslations } from "app/actions"
 import ProductPreview from "../product-preview"
 
 type RelatedProductsProps = {
@@ -19,6 +19,9 @@ export default async function RelatedProducts({
   if (!region) {
     return null
   }
+
+  const translations = await fetchTranslations(countryCode)
+  const relatedProductsTranslation = translations.RelatedProducts
 
   // edit this function to define your related products logic
   const setQueryParams = (): StoreGetProductsParams => {
@@ -64,10 +67,10 @@ export default async function RelatedProducts({
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
         <span className="text-base-regular text-gray-600 mb-6">
-          Related products
+          {relatedProductsTranslation.title}
         </span>
         <p className="text-2xl-regular text-ui-fg-base max-w-lg">
-          You might also want to check out these products.
+          {relatedProductsTranslation.youLike}
         </p>
       </div>
 

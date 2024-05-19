@@ -1,0 +1,89 @@
+{
+    "Buttons": {
+        "viewAll": "Voir tout"
+    },
+    "Hero": {
+        "subheader": "Luxe d'occasion",
+        "title": "Marques emblématiques",
+        "aboutUs": "Découvrez l'avenir du luxe avec notre collection de marques emblématiques. Nous offrons une seconde vie aux produits intemporels qui devraient être considérés comme de véritables investissements.",
+        "cta": "En savoir plus"
+    },
+    "Intro": {
+        "subheader": "À propos de Gibbarosa",
+        "title": "Luxe d'occasion",
+        "aboutUs": "Gibbarosa est née de l'amour pour l'histoire, le patrimoine et le savoir-faire des maisons de mode de luxe. Nous donnons une seconde vie aux produits intemporels qui devraient être considérés comme de véritables investissements.",
+        "cta": "En savoir plus"
+    },
+    "Navbar": [
+        {
+            "name": "Nouveautés",
+            "href": "/"
+        },
+        {
+            "name": "Sacs",
+            "href": "/collections/bags"
+        },
+        {
+            "name": "Bijoux",
+            "href": "/collections/jewelry"
+        },
+        {
+            "name": "Accessoires",
+            "href": "/collections/accessories"
+        },
+        {
+            "name": "Chaussures",
+            "href": "/collections/shoes"
+        },
+        {
+            "name": "Marques",
+            "href": "/collections/brands"
+        }
+    ],
+    "Footer": {
+        "privacyPolicy": "Politique de confidentialité",
+        "termsOfService": "Conditions d'utilisation"
+    },
+    "Cart": {
+        "title": "Panier",
+        "empty": "Votre panier est vide",
+        "total": "Total",
+        "subtotal": "Sous-total",
+        "summary": "Résumé",
+        "quantity": "Quantité",
+        "remove": "Retirer",
+        "goToCart": "Aller au panier",
+        "goToAllProd": "Aller à tous les produits",
+        "exploreProd": "Explorer les produits"
+    },
+    "CartPage": {
+        "title": "Panier",
+        "empty": "Vous n'avez rien dans votre panier. Changeons cela, utilisez le lien ci-dessous pour commencer à parcourir nos produits.",
+        "exploreProd": "Explorer les produits"
+    },
+    "CartButtons": {
+        "addToCart": "Ajouter au panier",
+        "outOfStock": "Rupture de stock",
+        "selectVariant": "Sélectionner une variante"
+    },
+    "RelatedProducts": {
+        "title": "Produits similaires",
+        "youLike": "Vous pourriez également être intéressé par ces produits."
+    },
+    "ProductTabs": {
+        "prodInfo": "Informations sur le produit",
+        "shipReturn": "Expédition et Retours",
+        "material": "Matériau",
+        "countryOrigin": "Pays d'origine",
+        "type": "Type",
+        "weight": "Poids",
+        "dimensions": "Dimensions",
+        "tags": "Tags",
+        "fastDelivery": "Livraison rapide",
+        "delivDescription": "Description de la livraison",
+        "simpleExchange": "Échange simple",
+        "exchangeDescription": "La taille n'est pas tout à fait correcte ? Pas de soucis - nous échangerons votre produit contre un nouveau.",
+        "easyReturn": "Retour facile",
+        "returnDescription": "Retournez simplement votre produit et nous vous rembourserons. Pas de questions posées - nous ferons de notre mieux pour que votre retour soit sans tracas."
+    }
+}

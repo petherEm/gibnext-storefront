@@ -1,53 +1,34 @@
 "use client"
 
-import React, {
-  createContext,
-  useContext,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react"
+import { createContext, useContext, ReactNode } from "react"
 
 interface TranslationContextProps {
   countryCode: string
-  translations: any
+  translations: Record<string, any>
 }
 
-const TranslationContext = createContext<TranslationContextProps | undefined>(
-  undefined
-)
-
-export const useTranslationContext = () => {
-  const context = useContext(TranslationContext)
-  if (!context) {
-    throw new Error(
-      "useTranslationContext must be used within a TranslationProvider"
-    )
-  }
-  return context
-}
+const TranslationContext = createContext<TranslationContextProps | null>(null)
 
 export const TranslationProvider = ({
+  countryCode,
+  translations,
   children,
-  countryCode: initialCountryCode,
-  translations: initialTranslations,
 }: {
-  children: ReactNode
   countryCode: string
-  translations: any
+  translations: Record<string, any>
+  children: ReactNode
 }) => {
-  const [countryCode, setCountryCode] = useState(initialCountryCode)
-  const [translations, setTranslations] = useState(initialTranslations)
-
-  // Ensure client-side updates do not cause hydration errors
-  useEffect(() => {
-    setCountryCode(initialCountryCode)
-    setTranslations(initialTranslations)
-  }, [initialCountryCode, initialTranslations])
-
   return (
     <TranslationContext.Provider value={{ countryCode, translations }}>
       {children}
     </TranslationContext.Provider>
   )
+}
+
+export const useTranslation = () => {
+  const context = useContext(TranslationContext)
+  if (!context) {
+    throw new Error("useTranslation must be used within a TranslationProvider")
+  }
+  return context.translations
 }

@@ -41,6 +41,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           <ProductInfo product={product} countryCode={countryCode} />
           <ProductTabs product={product} countryCode={countryCode} />
           <ProductOnboardingCta />
+
           <Suspense
             fallback={
               <ProductActions

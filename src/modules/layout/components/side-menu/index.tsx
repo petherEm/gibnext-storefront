@@ -10,6 +10,15 @@ import { Menu } from "lucide-react"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CountrySelect from "../country-select"
 
+type SideMenuProps = {
+  regions: Region[] | null
+  countryCode: string
+  translations: {
+    name: string
+    href: string
+  }[]
+}
+
 const SideMenuItems = {
   Home: "/",
   Store: "/store",
@@ -18,7 +27,7 @@ const SideMenuItems = {
   Cart: "/cart",
 }
 
-const SideMenu = ({ regions }: { regions: Region[] | null }) => {
+const SideMenu = ({ regions, countryCode, translations }: SideMenuProps) => {
   const toggleState = useToggleState()
 
   return (
@@ -57,16 +66,15 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                       </button>
                     </div>
                     <ul className="flex flex-col gap-6 items-start justify-start">
-                      {Object.entries(SideMenuItems).map(([name, href]) => {
+                      {translations.map((item) => {
                         return (
-                          <li key={name}>
+                          <li key={item.name}>
                             <LocalizedClientLink
-                              href={href}
+                              href={item.href}
                               className="text-3xl leading-10 hover:text-ui-fg-disabled"
                               onClick={close}
-                              data-testid={`${name.toLowerCase()}-link`}
                             >
-                              {name}
+                              {item.name}
                             </LocalizedClientLink>
                           </li>
                         )

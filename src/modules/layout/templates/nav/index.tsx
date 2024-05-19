@@ -55,18 +55,21 @@ export default async function Nav({ translations, countryCode }: NavProps) {
                   Search
                 </LocalizedClientLink>
               )}
-
-              <LocalizedClientLink
-                className="hover:text-ui-fg-base"
-                href="/account"
-                data-testid="nav-account-link"
-              >
-                <User size={18} />
-              </LocalizedClientLink>
             </div>
             <div className="flex small:hidden items-center gap-x-6 h-full">
-              <SideMenu regions={regions} />
+              <SideMenu
+                regions={regions}
+                translations={translations}
+                countryCode={countryCode}
+              />
             </div>
+            <LocalizedClientLink
+              className="hover:text-ui-fg-base"
+              href="/account"
+              data-testid="nav-account-link"
+            >
+              <User size={18} />
+            </LocalizedClientLink>
 
             <Suspense
               fallback={

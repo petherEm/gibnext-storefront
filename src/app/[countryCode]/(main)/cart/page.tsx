@@ -39,7 +39,7 @@ const fetchCart = async () => {
   return cart
 }
 
-export default async function Cart() {
+export default async function Cart({ countryCode }: { countryCode: string }) {
   const cart = await fetchCart()
   const customer = await getCustomer()
 

@@ -24,10 +24,10 @@ const Hero = ({ translations }: { translations: any }) => {
         <div className="bg-rose-300 mb-12 flex w-full md:mb-16 lg:w-1/2">
           <div className="w-full h-full">
             <Image
-              src="http://localhost:3000/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F9acyr12z%2Fproduction%2Fe69dadc8f8bfc8088d64034c74dc3a164f69d60e-1502x1600.png&w=640&q=75"
+              src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Hero_1.png"
               alt="Hero image"
-              width={600}
-              height={600}
+              width={300}
+              height={300}
               priority
               className="h-full w-full object-cover object-center"
             />

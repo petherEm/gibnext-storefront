@@ -12,7 +12,7 @@ const Intro = ({ translations }: { translations: any }) => {
           <div className="flex items-center justify-between space-x-4">
             <div className="w-1/2 p-2">
               <Image
-                src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Channel_Rainbow_1-1715686066460.webp"
+                src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Featured_1.png"
                 alt="Hero image"
                 width={300}
                 height={300}
@@ -22,7 +22,7 @@ const Intro = ({ translations }: { translations: any }) => {
             </div>
             <div className="w-1/2 p-2">
               <Image
-                src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/KnotHobo_1-1715094705046.webp"
+                src="https://gibbarosa.fra1.cdn.digitaloceanspaces.com/Featured_2.png"
                 alt="Hero image"
                 width={300}
                 height={300}

@@ -1,6 +1,7 @@
 import Footer from "@modules/layout/templates/footer"
 import Nav from "@modules/layout/templates/nav"
-import { getDictionary } from "./dictionaries"
+import { fetchTranslations } from "app/actions"
+
 import { TranslationProvider } from "../../../lib/context/TranslationContext"
 
 export async function generateStaticParams() {
@@ -15,7 +16,7 @@ export default async function CountryLayout({
   params: { countryCode: string }
 }) {
   const { countryCode } = params
-  const translations = await getDictionary(countryCode)
+  const translations = await fetchTranslations(countryCode)
 
   return (
     <TranslationProvider countryCode={countryCode} translations={translations}>

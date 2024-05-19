@@ -1,0 +1,89 @@
+{
+    "Buttons": {
+        "viewAll": "View all"
+    },
+    "Hero": {
+        "subheader": "Pre-owned Luxury",
+        "title": "Iconic brands",
+        "aboutUs": "Discover the future of luxury with our collection of iconic brands. We offer a second life to timeless products that should be treated as true investments.",
+        "cta": "Learn more"
+    },
+    "Intro": {
+        "subheader": "About Gibbarosa",
+        "title": "Pre-owned Luxury",
+        "aboutUs": "Gibbarosa was founded out of love for the history, heritage, and savoir-faire of luxury fashion houses. We give a second life to timeless products that should be treated as true investments.",
+        "cta": "Learn more"
+    },
+    "Navbar": [
+        {
+            "name": "New",
+            "href": "/"
+        },
+        {
+            "name": "Bags",
+            "href": "/collections/bags"
+        },
+        {
+            "name": "Jewelry",
+            "href": "/collections/jewelry"
+        },
+        {
+            "name": "Accessories",
+            "href": "/collections/accessories"
+        },
+        {
+            "name": "Shoes",
+            "href": "/collections/shoes"
+        },
+        {
+            "name": "Brands",
+            "href": "/collections/brands"
+        }
+    ],
+    "Footer": {
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service"
+    },
+    "Cart": {
+        "title": "Cart",
+        "empty": "Your cart is empty",
+        "total": "Total",
+        "subtotal": "Subtotal",
+        "summary": "Summary",
+        "quantity": "Quantity",
+        "remove": "Remove",
+        "goToCart": "Go to cart",
+        "goToAllProd": "Go to all products page",
+        "exploreProd": "Explore products"
+    },
+    "CartPage": {
+        "title": "Cart",
+        "empty": "You don't have anything in your cart. Let&apos;s change that, use the link below to start browsing our products.",
+        "exploreProd": "Explore products"
+    },
+    "CartButtons": {
+        "addToCart": "Add to cart",
+        "outOfStock": "Out of stock",
+        "selectVariant": "Select variant"
+    },
+    "RelatedProducts": {
+        "title": "Related products",
+        "youLike": "You might also want to check out these products."
+    },
+    "ProductTabs": {
+        "prodInfo": "Product information",
+        "shipReturn": "Shipping & Returns",
+        "material": "Material",
+        "countryOrigin": "Country of Origin",
+        "type": "Type",
+        "weight": "Weight",
+        "dimensions": "Dimensions",
+        "tags": "Tags",
+        "fastDelivery": "Fast delivery",
+        "delivDescription": "Delivery description",
+        "simpleExchange": "Simple exchange",
+        "exchangeDescription": "Is the fit not quite right? No worries - we'll exchange your product for a new one.",
+        "easyReturn": "Easy return",
+        "returnDescription": "Just return your product and we'll refund your money. No questions asked - we'll do our best to make sure your return is hassle-free."
+    }
+}
