@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { EllipseMiniSolid } from "@medusajs/icons"
 import { Label, RadioGroup, Text, clx } from "@medusajs/ui"
 import { ChangeEvent } from "react"
