@@ -35,11 +35,7 @@ const FilterRadioGroup = ({
             })}
           >
             {i.value === value && <EllipseMiniSolid />}
-            <RadioGroup.Item
-              className="hidden peer"
-              id={i.value}
-              value={i.value}
-            />
+            <RadioGroup.Item id={i.value} value={i.value} />
             <Label
               placeholder={i.label}
               htmlFor={i.value}
