@@ -28,7 +28,6 @@ const LanguageSelect: React.FC<LanguageSelectProps> = ({
       value={selectedLanguage}
       onChange={handleLanguageChange}
       className="hover:text-ui-fg-base"
-      data-testid="nav-lang-select"
     >
       <option value="en">English</option>
       <option value="fr">Français</option>
