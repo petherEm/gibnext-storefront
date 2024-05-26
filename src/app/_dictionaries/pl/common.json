@@ -2,6 +2,9 @@
     "Buttons": {
         "viewAll": "Zobacz wszystkie"
     },
+    "NewSection": {
+        "title": "Nowości"
+    },
     "Hero": {
         "subheader": "Luksus z drugiej ręki",
         "title": "Ikoniczne marki",
@@ -17,7 +20,7 @@
     "Navbar": [
         {
             "name": "Nowości",
-            "href": "/"
+            "href": "/collections/new"
         },
         {
             "name": "Torebki",
@@ -38,6 +41,10 @@
         {
             "name": "Marki",
             "href": "/collections/brands"
+        },
+        {
+            "name": "AI Assistant",
+            "href": "/aiassistant"
         }
     ],
     "Footer": {

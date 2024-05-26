@@ -23,11 +23,23 @@ export default async function CollectionRail({
   const translations = await fetchTranslations(countryCode)
   const viewAllButton = translations.Buttons
 
+  console.log(countryCode)
+  const getTitle = (): string => {
+    if (countryCode === "pl") {
+      return collection.title
+    }
+    if (countryCode === "fr") {
+      return collection.metadata?.FRDesc || collection.title || ""
+    }
+    if (countryCode === "en") {
+      return collection.metadata?.ENDesc || collection.title || ""
+    }
+    return collection.title || ""
+  }
+
   return (
     <div className="content-container py-12 small:py-24">
       <div className="flex flex-col mb-8">
-        {/* <Text className="txt-xlarge">{collection.title}</Text> */}
-
         <Image
           src={collection.metadata?.image as string}
           alt={collection.title}
@@ -35,9 +47,7 @@ export default async function CollectionRail({
           height={500}
           className="w-full"
         />
-        <h1 className="font-playfair text-[32px] font-bold">
-          {collection.title}
-        </h1>
+        <h1 className="font-playfair text-[32px] font-bold">{getTitle()}</h1>
         <InteractiveLink href={`/collections/${collection.handle}`}>
           {viewAllButton.viewAll} {count}
         </InteractiveLink>

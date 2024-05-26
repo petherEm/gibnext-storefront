@@ -4,6 +4,7 @@ import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 import { listRegions } from "@lib/data"
 import { Heart, Menu, Search, ShoppingBag, User } from "lucide-react"
+import LanguageSelect from "@modules/layout/components/lang-select"
 
 type NavProps = {
   countryCode: string
@@ -70,6 +71,7 @@ export default async function Nav({ translations, countryCode }: NavProps) {
             >
               <User size={18} />
             </LocalizedClientLink>
+            <LanguageSelect currentCountryCode={countryCode} />
 
             <Suspense
               fallback={

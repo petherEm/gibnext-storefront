@@ -1,6 +1,11 @@
 import { Product } from "@medusajs/medusa"
 import { Metadata } from "next"
-import { getCollectionsList, getProductsList, getRegion } from "@lib/data"
+import {
+  getCollectionsList,
+  getNewProducts,
+  getProductsList,
+  getRegion,
+} from "@lib/data"
 import { ProductCollectionWithPreviews } from "types/global"
 import { cache } from "react"
 import { getDictionary } from "../../dictionaries"
@@ -9,6 +14,7 @@ import MidBanner from "@modules/home/components/midbanner/index"
 import Intro from "@modules/home/components/intro"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import FeaturedCollections from "@modules/home/components/featured-collections"
+import NewestProducts from "@modules/home/components/newest-products"
 
 export const metadata: Metadata = {
   title: "Gibbarosa Pre-owned Luxury",
@@ -65,6 +71,9 @@ export default async function Home({
   const collections = await getCollectionsWithProducts(countryCode)
   const region = await getRegion(countryCode)
   const translations = await getDictionary(countryCode)
+  const {
+    response: { products: newProducts },
+  } = await getNewProducts({ countryCode })
 
   if (!collections || !region) {
     return null
@@ -73,6 +82,13 @@ export default async function Home({
     <>
       <Hero translations={translations} />
       <Intro translations={translations} />
+
+      <NewestProducts
+        region={region}
+        countryCode={countryCode}
+        newProducts={newProducts}
+      />
+
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts

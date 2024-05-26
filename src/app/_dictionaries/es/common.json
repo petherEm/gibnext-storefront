@@ -2,6 +2,9 @@
     "Buttons": {
         "viewAll": "Ver todo"
     },
+    "NewSection": {
+        "title": "Novedades"
+    },
     "Hero": {
         "subheader": "Lujo de segunda mano",
         "title": "Marcas icónicas",
@@ -17,7 +20,7 @@
     "Navbar": [
         {
             "name": "Novedades",
-            "href": "/"
+            "href": "/collections/new"
         },
         {
             "name": "Bolsos",
@@ -38,6 +41,10 @@
         {
             "name": "Marcas",
             "href": "/collections/brands"
+        },
+        {
+            "name": "AI Assistant",
+            "href": "/aiassistant"
         }
     ],
     "Footer": {

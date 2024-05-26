@@ -2,6 +2,9 @@
     "Buttons": {
         "viewAll": "Voir tout"
     },
+    "NewSection": {
+        "title": "Nouveautés"
+    },
     "Hero": {
         "subheader": "Luxe d'occasion",
         "title": "Marques emblématiques",
@@ -17,7 +20,7 @@
     "Navbar": [
         {
             "name": "Nouveautés",
-            "href": "/"
+            "href": "/collections/new"
         },
         {
             "name": "Sacs",
@@ -38,6 +41,10 @@
         {
             "name": "Marques",
             "href": "/collections/brands"
+        },
+        {
+            "name": "AI Assistant",
+            "href": "/aiassistant"
         }
     ],
     "Footer": {

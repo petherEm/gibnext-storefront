@@ -2,6 +2,9 @@
     "Buttons": {
         "viewAll": "View all"
     },
+    "NewSection": {
+        "title": "New in"
+    },
     "Hero": {
         "subheader": "Pre-owned Luxury",
         "title": "Iconic brands",
@@ -17,7 +20,7 @@
     "Navbar": [
         {
             "name": "New",
-            "href": "/"
+            "href": "/collections/new"
         },
         {
             "name": "Bags",
@@ -38,6 +41,10 @@
         {
             "name": "Brands",
             "href": "/collections/brands"
+        },
+        {
+            "name": "AI Assistant",
+            "href": "/aiassistant"
         }
     ],
     "Footer": {

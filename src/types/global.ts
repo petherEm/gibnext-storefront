@@ -24,11 +24,18 @@ export type ProductPreviewType = {
   isFeatured?: boolean
 }
 
+export interface ProductMetadata {
+  image?: string
+  ENDesc?: string
+  FRDesc?: string
+}
+
 export type ProductCollectionWithPreviews = Omit<
   ProductCollection,
   "products"
 > & {
   products: ProductPreviewType[]
+  metadata?: ProductMetadata
 }
 
 export type InfiniteProductPage = {

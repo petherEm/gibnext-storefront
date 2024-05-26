@@ -1,6 +1,6 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ChevronDown from "@modules/common/icons/chevron-down"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
+import MedusaCTA from "@modules/layout/components/vabank-cta"
 
 export default function CheckoutLayout({
   children,

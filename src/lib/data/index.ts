@@ -16,7 +16,11 @@ import { cache, use } from "react"
 import sortProducts from "@lib/util/sort-products"
 import transformProductPreview from "@lib/util/transform-product-preview"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-import { ProductCategoryWithChildren, ProductPreviewType } from "types/global"
+import {
+  ProductCategoryWithChildren,
+  ProductCollectionWithPreviews,
+  ProductPreviewType,
+} from "types/global"
 
 import { medusaClient } from "@lib/config"
 import medusaError from "@lib/util/medusa-error"
@@ -754,4 +758,35 @@ export const getProductsByCategoryHandle = cache(async function ({
     response,
     nextPage,
   }
+})
+
+// CUSTOM FUNCTION TO GET PRODUCTS BASED ON TAG - NEW
+
+export const getNewProducts = cache(async function ({
+  countryCode,
+}: {
+  countryCode: string
+}): Promise<{
+  response: { products: ProductPreviewType[] }
+}> {
+  const region = await getRegion(countryCode)
+
+  if (!region) {
+    return { response: { products: [] } }
+  }
+
+  const { products } = await medusaClient.products.list({
+    region_id: region.id,
+    expand: "tags",
+    limit: 100, // Adjust limit as needed
+  })
+
+  // Log the products to debug
+  // console.log("Fetched Products:", products);
+
+  const newProducts = products.filter((product) =>
+    product.tags?.some((tag) => tag.value === "new")
+  )
+
+  return { response: { products: newProducts } }
 })

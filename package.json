@@ -20,6 +20,7 @@
     "@types/react": "17.0.40"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.13",
     "@headlessui/react": "^1.6.1",
     "@hookform/error-message": "^2.0.0",
     "@medusajs/link-modules": "^0.2.3",
@@ -33,6 +34,7 @@
     "@paypal/react-paypal-js": "^7.8.1",
     "@stripe/react-stripe-js": "^1.7.2",
     "@stripe/stripe-js": "^1.29.0",
+    "ai": "^3.1.12",
     "algoliasearch": "^4.20.0",
     "axios": "^1.6.7",
     "i18next": "^23.11.4",
@@ -43,11 +45,13 @@
     "next-i18next": "^15.3.0",
     "next-intl": "^3.13.0",
     "pg": "^8.11.3",
+    "radix-ui": "^1.0.1",
     "react": "^18.2.0",
     "react-country-flag": "^3.0.2",
     "react-dom": "^18.2.0",
     "react-instantsearch-hooks-web": "^6.29.0",
     "react-intersection-observer": "^9.3.4",
+    "react-typed": "^2.0.12",
     "tailwindcss-radix": "^2.8.0",
     "webpack": "^5"
   },
