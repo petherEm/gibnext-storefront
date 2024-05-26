@@ -53,7 +53,8 @@
     "react-intersection-observer": "^9.3.4",
     "react-typed": "^2.0.12",
     "tailwindcss-radix": "^2.8.0",
-    "webpack": "^5"
+    "webpack": "^5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
