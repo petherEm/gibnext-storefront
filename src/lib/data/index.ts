@@ -788,5 +788,6 @@ export const getNewProducts = cache(async function ({
     product.tags?.some((tag) => tag.value === "new")
   )
 
+  //@ts-ignore
   return { response: { products: newProducts } }
 })

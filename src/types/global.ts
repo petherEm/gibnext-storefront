@@ -22,6 +22,8 @@ export type ProductPreviewType = {
     price_type: "default" | "sale"
   }
   isFeatured?: boolean
+  tags?: { value: string }[]
+  metadata?: ProductMetadata
 }
 
 export interface ProductMetadata {
