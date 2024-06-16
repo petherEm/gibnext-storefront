@@ -1,5 +1,6 @@
 import { EllipseMiniSolid } from "@medusajs/icons"
 import { Label, RadioGroup, Text, clx } from "@medusajs/ui"
+import { ChangeEvent } from "react"
 
 type FilterRadioGroupProps = {
   title: string
@@ -7,8 +8,9 @@ type FilterRadioGroupProps = {
     value: string
     label: string
   }[]
-  value: string
-  handleChange: (value: string) => void
+
+  value: any
+  handleChange: (...args: any[]) => void
   "data-testid"?: string
 }
 
@@ -22,11 +24,7 @@ const FilterRadioGroup = ({
   return (
     <div className="flex gap-x-3 flex-col gap-y-3">
       <Text className="txt-compact-small-plus text-ui-fg-muted">{title}</Text>
-      <RadioGroup
-        data-testid={dataTestId}
-        value={value}
-        onValueChange={handleChange}
-      >
+      <RadioGroup data-testid={dataTestId}>
         {items?.map((i) => (
           <div
             key={i.value}
@@ -35,7 +33,18 @@ const FilterRadioGroup = ({
             })}
           >
             {i.value === value && <EllipseMiniSolid />}
-            <RadioGroup.Item id={i.value} value={i.value} />
+            <RadioGroup.Item
+              checked={i.value === value}
+              onClick={(e) =>
+                handleChange(
+                  e as unknown as ChangeEvent<HTMLButtonElement>,
+                  i.value
+                )
+              }
+              className="hidden peer"
+              id={i.value}
+              value={i.value}
+            />
             <Label
               placeholder={i.label}
               htmlFor={i.value}

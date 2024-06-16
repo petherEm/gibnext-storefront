@@ -20,7 +20,7 @@
     "Navbar": [
         {
             "name": "New",
-            "href": "/collections/new"
+            "href": "/new"
         },
         {
             "name": "Bags",
@@ -92,5 +92,11 @@
         "exchangeDescription": "Is the fit not quite right? No worries - we'll exchange your product for a new one.",
         "easyReturn": "Easy return",
         "returnDescription": "Just return your product and we'll refund your money. No questions asked - we'll do our best to make sure your return is hassle-free."
+    },
+    "sortOptions": {
+        "title": "Sort by",
+        "created_at": "Latest Arrivals",
+        "price_asc": "Price: Low -> High",
+        "price_desc": "Price: High -> Low"
     }
 }

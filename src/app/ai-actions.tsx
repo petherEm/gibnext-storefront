@@ -4,7 +4,6 @@ import {
   createAI,
   createStreamableUI,
   getAIState,
-  render,
   createStreamableValue,
   getMutableAIState,
   streamUI,

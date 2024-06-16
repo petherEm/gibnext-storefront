@@ -20,7 +20,7 @@
     "Navbar": [
         {
             "name": "Nouveautés",
-            "href": "/collections/new"
+            "href": "/new"
         },
         {
             "name": "Sacs",
@@ -92,5 +92,11 @@
         "exchangeDescription": "La taille n'est pas tout à fait correcte ? Pas de soucis - nous échangerons votre produit contre un nouveau.",
         "easyReturn": "Retour facile",
         "returnDescription": "Retournez simplement votre produit et nous vous rembourserons. Pas de questions posées - nous ferons de notre mieux pour que votre retour soit sans tracas."
+    },
+    "sortOptions": {
+        "title": "Trier par",
+        "created_at": "Dernières arrivées",
+        "price_asc": "Prix : Bas -> Haut",
+        "price_desc": "Prix : Haut -> Bas"
     }
 }

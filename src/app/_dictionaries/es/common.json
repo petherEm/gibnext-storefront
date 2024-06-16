@@ -20,7 +20,7 @@
     "Navbar": [
         {
             "name": "Novedades",
-            "href": "/collections/new"
+            "href": "/new"
         },
         {
             "name": "Bolsos",
@@ -92,5 +92,11 @@
         "exchangeDescription": "¿La talla no es la correcta? No te preocupes - cambiaremos tu producto por uno nuevo.",
         "easyReturn": "Devolución fácil",
         "returnDescription": "Simplemente devuelve tu producto y te reembolsaremos tu dinero. Sin preguntas - haremos nuestro mejor esfuerzo para que tu devolución sea sin complicaciones."
+    },
+    "sortOptions": {
+        "title": "Ordenar por",
+        "created_at": "Últimas llegadas",
+        "price_asc": "Precio: Bajo -> Alto",
+        "price_desc": "Precio: Alto -> Bajo"
     }
 }

@@ -20,7 +20,7 @@
     "Navbar": [
         {
             "name": "Nowości",
-            "href": "/collections/new"
+            "href": "/new"
         },
         {
             "name": "Torebki",
@@ -92,5 +92,11 @@
         "exchangeDescription": "Rozmiar nie do końca pasuje? Nie martw się - wymienimy twój produkt na nowy.",
         "easyReturn": "Łatwy zwrot",
         "returnDescription": "Po prostu zwróć swój produkt, a my zwrócimy ci pieniądze. Bez pytań - dołożymy wszelkich starań, aby twój zwrot był bezproblemowy."
+    },
+    "sortOptions": {
+        "title": "Sortuj",
+        "created_at": "Najnowsze",
+        "price_asc": "Cena: Niska -> Wysoka",
+        "price_desc": "Cena: Wysoka -> Niska"
     }
 }

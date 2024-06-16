@@ -1,7 +1,27 @@
 "use client"
 
+import { Select } from "@medusajs/ui"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+
+const languages = [
+  {
+    value: "pl",
+    label: "PL",
+  },
+  {
+    value: "fr",
+    label: "FR",
+  },
+  {
+    value: "es",
+    label: "ES",
+  },
+  {
+    value: "en",
+    label: "EN",
+  },
+]
 
 interface LanguageSelectProps {
   currentCountryCode: string
@@ -13,28 +33,33 @@ const LanguageSelect: React.FC<LanguageSelectProps> = ({
   const router = useRouter()
   const [selectedLanguage, setSelectedLanguage] = useState(currentCountryCode)
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const newCountryCode = e.target.value
-    setSelectedLanguage(newCountryCode)
-    if (newCountryCode === "en") {
+  const handleLanguageChange = (value: string) => {
+    setSelectedLanguage(value)
+    if (value === "en") {
       router.push(`/`)
     } else {
-      router.push(`/${newCountryCode}`)
+      router.push(`/${value}`)
     }
   }
 
   return (
-    <select
-      value={selectedLanguage}
-      onChange={handleLanguageChange}
-      className="hover:text-ui-fg-base"
-    >
-      <option value="en">English</option>
-      <option value="fr">Français</option>
-      <option value="es">Español</option>
-      <option value="pl">Polski</option>
-      {/* Add more options as needed */}
-    </select>
+    <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
+      <Select.Trigger className="hover:text-ui-fg-base w-[40px] focus:outline-none bg-transparent">
+        <Select.Value placeholder={selectedLanguage} />
+      </Select.Trigger>
+
+      <Select.Content>
+        {languages.map((language) => (
+          <Select.Item
+            key={language.value}
+            value={language.value}
+            className="hover:text-ui-fg-base !list-none"
+          >
+            {language.label}
+          </Select.Item>
+        ))}
+      </Select.Content>
+    </Select>
   )
 }
 

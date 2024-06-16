@@ -23,7 +23,6 @@ export default async function CollectionRail({
   const translations = await fetchTranslations(countryCode)
   const viewAllButton = translations.Buttons
 
-  console.log(countryCode)
   const getTitle = (): string => {
     if (countryCode === "pl") {
       return collection.title

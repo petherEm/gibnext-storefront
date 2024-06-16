@@ -23,8 +23,7 @@ export default async function RelatedProducts({
   const translations = await fetchTranslations(countryCode)
   const relatedProductsTranslation = translations.RelatedProducts
 
-  // edit this function to define your related products logic
-  const setQueryParams = (): StoreGetProductsParams => {
+  const setQueryParams = (useFallback = false): StoreGetProductsParams => {
     const params: StoreGetProductsParams = {}
 
     if (region?.id) {
@@ -35,12 +34,19 @@ export default async function RelatedProducts({
       params.currency_code = region.currency_code
     }
 
-    if (product.collection_id) {
-      params.collection_id = [product.collection_id]
-    }
+    if (!useFallback) {
+      if (product.collection_id) {
+        params.collection_id = [product.collection_id]
+      }
 
-    if (product.tags) {
-      params.tags = product.tags.map((t) => t.value)
+      if (product.tags) {
+        params.tags = product.tags.map((t) => t.value)
+      }
+    } else {
+      // Fallback criteria if initial search yields no results
+      params.collection_id = product.collection_id
+        ? [product.collection_id]
+        : undefined
     }
 
     params.is_giftcard = false
@@ -48,9 +54,8 @@ export default async function RelatedProducts({
     return params
   }
 
-  const queryParams = setQueryParams()
-
-  const productPreviews = await getProductsList({
+  let queryParams = setQueryParams()
+  let productPreviews = await getProductsList({
     queryParams,
     countryCode,
   }).then(({ response }) =>
@@ -58,6 +63,19 @@ export default async function RelatedProducts({
       (productPreview) => productPreview.id !== product.id
     )
   )
+
+  // Fallback to broader criteria if no related products are found
+  if (!productPreviews.length) {
+    queryParams = setQueryParams(true)
+    productPreviews = await getProductsList({
+      queryParams,
+      countryCode,
+    }).then(({ response }) =>
+      response.products.filter(
+        (productPreview) => productPreview.id !== product.id
+      )
+    )
+  }
 
   if (!productPreviews.length) {
     return null
