@@ -9,11 +9,11 @@ const Hero = ({ translations }: { translations: any }) => {
     <section className="font-playfair mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-col-reverse flex-wrap justify-between md:flex-row md:mb-16">
         <div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/2 lg:pb-24 lg:pt-48">
-          <h4 className="h4 mb-2">{heroTranslations.subheader}</h4>
-          <h1 className="h1 mb-4 text-black sm:text-5xl md:mb-8 md:text-6xl">
+          <h4 className="h4 md:mb-2">{heroTranslations.subheader}</h4>
+          <h1 className="h1 text-3xl font-semibold mb-4 text-black sm:text-5xl md:mb-8 md:text-6xl">
             {heroTranslations.title}
           </h1>
-          <p className="h3 w-2/3">{heroTranslations.aboutUs}</p>
+          <p className="h3 md:w-2/3">{heroTranslations.aboutUs}</p>
           <Link href="/">
             <Button className="mt-8 text-white bg-black w-fit">
               {heroTranslations.cta}
