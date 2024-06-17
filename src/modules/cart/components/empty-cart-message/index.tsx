@@ -1,4 +1,5 @@
 "use client"
+
 import { Heading, Text } from "@medusajs/ui"
 
 import InteractiveLink from "@modules/common/components/interactive-link"

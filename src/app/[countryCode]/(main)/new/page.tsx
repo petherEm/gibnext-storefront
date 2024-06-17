@@ -54,6 +54,9 @@ export default async function NewPage({
 }) {
   const region = await getRegion(countryCode)
 
+  if (!region) {
+    notFound()
+  }
   const {
     response: { products: newProducts },
   } = await getNewProducts({ countryCode })

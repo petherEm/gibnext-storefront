@@ -39,9 +39,16 @@ const fetchCart = async () => {
   return cart
 }
 
-export default async function Cart({ countryCode }: { countryCode: string }) {
+export default async function Cart({
+  params,
+}: {
+  params: { countryCode: string }
+}) {
+  const countryCode = params.countryCode
   const cart = await fetchCart()
   const customer = await getCustomer()
 
-  return <CartTemplate cart={cart} customer={customer} />
+  return (
+    <CartTemplate cart={cart} customer={customer} countryCode={countryCode} />
+  )
 }

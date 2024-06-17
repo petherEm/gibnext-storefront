@@ -1,5 +1,6 @@
 import { LineItem, Region } from "@medusajs/medusa"
 import { Heading, Table } from "@medusajs/ui"
+import { fetchTranslations } from "app/actions"
 
 import Item from "@modules/cart/components/item"
 import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
@@ -7,25 +8,36 @@ import SkeletonLineItem from "@modules/skeletons/components/skeleton-line-item"
 type ItemsTemplateProps = {
   items?: Omit<LineItem, "beforeInsert">[]
   region?: Region
+  countryCode: string
 }
 
-const ItemsTemplate = ({ items, region }: ItemsTemplateProps) => {
+const ItemsTemplate = async ({
+  items,
+  region,
+  countryCode,
+}: ItemsTemplateProps) => {
+  const translations = await fetchTranslations(countryCode)
+  const cartTranslations = translations.Cart
   return (
     <div>
       <div className="pb-3 flex items-center">
-        <Heading className="text-[2rem] leading-[2.75rem]">Cart</Heading>
+        <Heading className="text-[2rem] leading-[2.75rem]">
+          {cartTranslations.title}
+        </Heading>
       </div>
       <Table>
         <Table.Header className="border-t-0">
           <Table.Row className="text-ui-fg-subtle txt-medium-plus">
-            <Table.HeaderCell className="!pl-0">Item</Table.HeaderCell>
+            <Table.HeaderCell className="!pl-0">
+              {cartTranslations.item}
+            </Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
-            <Table.HeaderCell>Quantity</Table.HeaderCell>
+            <Table.HeaderCell>{cartTranslations.quantity}</Table.HeaderCell>
             <Table.HeaderCell className="hidden small:table-cell">
-              Price
+              {cartTranslations.price}
             </Table.HeaderCell>
             <Table.HeaderCell className="!pr-0 text-right">
-              Total
+              {cartTranslations.total}
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>

@@ -61,12 +61,16 @@
         "remove": "Usuń",
         "goToCart": "Przejdź do koszyka",
         "goToAllProd": "Przejdź do wszystkich produktów",
-        "exploreProd": "Odkryj produkty"
+        "exploreProd": "Odkryj produkty",
+        "price": "Cena",
+        "item": "Produkt"
     },
     "CartPage": {
         "title": "Koszyk",
         "empty": "Nie masz nic w swoim koszyku. Zmieńmy to, skorzystaj z poniższego linku, aby zacząć przeglądać nasze produkty.",
-        "exploreProd": "Odkryj produkty"
+        "exploreProd": "Odkryj produkty",
+        "summary": "Podsumowanie",
+        "goToCheckout": "Do kasy"
     },
     "CartButtons": {
         "addToCart": "Dodaj do koszyka",
@@ -98,5 +102,14 @@
         "created_at": "Najnowsze",
         "price_asc": "Cena: Niska -> Wysoka",
         "price_desc": "Cena: Wysoka -> Niska"
+    },
+    "signInPrompt": {
+        "haveAccount": "Masz juz konto?",
+        "noAccount": "Zaloguj się i korzystaj z usługi.",
+        "cta": "Zaloguj"
+    },
+    "checkoutLayout": {
+        "backToShopping": "Powrót do zakupów",
+        "back": "Powrót"
     }
 }

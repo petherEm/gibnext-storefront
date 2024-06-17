@@ -24,8 +24,7 @@ export default async function Nav({ translations, countryCode }: NavProps) {
           <div className="flex-1 flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="font-playfair text-[24px] font-bold hover:text-ui-fg-base"
-              data-testid="nav-store-link"
+              className="font-playfair text-[26px] md:text-[28px] font-bold"
             >
               Gibbarosa
             </LocalizedClientLink>

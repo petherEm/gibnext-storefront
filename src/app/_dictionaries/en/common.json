@@ -61,12 +61,16 @@
         "remove": "Remove",
         "goToCart": "Go to cart",
         "goToAllProd": "Go to all products page",
-        "exploreProd": "Explore products"
+        "exploreProd": "Explore products",
+        "price": "Price",
+        "item": "Product"
     },
     "CartPage": {
         "title": "Cart",
         "empty": "You don't have anything in your cart. Let&apos;s change that, use the link below to start browsing our products.",
-        "exploreProd": "Explore products"
+        "exploreProd": "Explore products",
+        "summary": "Summary",
+        "goToCheckout": "Go to checkout"
     },
     "CartButtons": {
         "addToCart": "Add to cart",
@@ -98,5 +102,14 @@
         "created_at": "Latest Arrivals",
         "price_asc": "Price: Low -> High",
         "price_desc": "Price: High -> Low"
+    },
+    "signInPrompt": {
+        "haveAccount": "Masz juz konto?",
+        "noAccount": "Zaloguj się i korzystaj z usługi.",
+        "cta": "Zaloguj"
+    },
+    "checkoutLayout": {
+        "backToShopping": "Back to shopping cart",
+        "back": "Back"
     }
 }

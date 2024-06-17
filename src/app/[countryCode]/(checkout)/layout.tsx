@@ -1,12 +1,19 @@
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ChevronDown from "@modules/common/icons/chevron-down"
 import MedusaCTA from "@modules/layout/components/vabank-cta"
+import { fetchTranslations } from "app/actions"
 
-export default function CheckoutLayout({
+export default async function CheckoutLayout({
   children,
+  params,
 }: {
   children: React.ReactNode
+  params: { countryCode: string }
 }) {
+  const { countryCode } = params
+  const translations = await fetchTranslations(countryCode)
+  const checkoutTranslations = translations.checkoutLayout
+
   return (
     <div className="w-full bg-white relative small:min-h-screen">
       <div className="h-16 bg-white border-b ">
@@ -18,10 +25,10 @@ export default function CheckoutLayout({
           >
             <ChevronDown className="rotate-90" size={16} />
             <span className="mt-px hidden small:block txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base ">
-              Back to shopping cart
+              {checkoutTranslations.backToShopping}
             </span>
             <span className="mt-px block small:hidden txt-compact-plus text-ui-fg-subtle hover:text-ui-fg-base">
-              Back
+              {checkoutTranslations.back}
             </span>
           </LocalizedClientLink>
           <LocalizedClientLink

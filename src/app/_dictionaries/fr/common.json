@@ -61,12 +61,16 @@
         "remove": "Retirer",
         "goToCart": "Aller au panier",
         "goToAllProd": "Aller à tous les produits",
-        "exploreProd": "Explorer les produits"
+        "exploreProd": "Explorer les produits",
+        "price": "Prix",
+        "item": "Produit"
     },
     "CartPage": {
         "title": "Panier",
         "empty": "Vous n'avez rien dans votre panier. Changeons cela, utilisez le lien ci-dessous pour commencer à parcourir nos produits.",
-        "exploreProd": "Explorer les produits"
+        "exploreProd": "Explorer les produits",
+        "summary": "Summary",
+        "goToCheckout": "Aller au paiement"
     },
     "CartButtons": {
         "addToCart": "Ajouter au panier",
@@ -98,5 +102,14 @@
         "created_at": "Dernières arrivées",
         "price_asc": "Prix : Bas -> Haut",
         "price_desc": "Prix : Haut -> Bas"
+    },
+    "signInPrompt": {
+        "haveAccount": "Masz juz konto?",
+        "noAccount": "Zaloguj się i korzystaj z usługi.",
+        "cta": "Zaloguj"
+    },
+    "checkoutLayout": {
+        "backToShopping": "Powrót do zakupów",
+        "back": "Powrót"
     }
 }
