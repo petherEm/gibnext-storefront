@@ -7,6 +7,9 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .custom-list-item {
+    list-style-type: none;
+  }
 
   .no-scrollbar::-webkit-scrollbar-track {
     background-color: transparent;
@@ -109,4 +112,5 @@
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
   }
+  
 }

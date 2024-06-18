@@ -29,15 +29,17 @@ export async function generateStaticParams() {
     return []
   }
 
-  const countryCodes = await listRegions().then((regions) =>
+  const countryCodes = await listRegions().then((regions: any[]) =>
     regions?.map((r) => r.countries.map((c) => c.iso_2)).flat()
   )
 
-  const collectionHandles = collections.map((collection) => collection.handle)
+  const collectionHandles = collections.map(
+    (collection: { handle: any }) => collection.handle
+  )
 
   const staticParams = countryCodes
-    ?.map((countryCode) =>
-      collectionHandles.map((handle) => ({
+    ?.map((countryCode: string) =>
+      collectionHandles.map((handle: any) => ({
         countryCode,
         handle,
       }))

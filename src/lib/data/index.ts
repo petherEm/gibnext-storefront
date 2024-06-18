@@ -377,7 +377,7 @@ export const getRegion = cache(async function (countryCode: string) {
       return null
     }
 
-    regions.forEach((region) => {
+    regions.forEach((region: Region) => {
       region.countries.forEach((c) => {
         regionMap.set(c.iso_2, region)
       })

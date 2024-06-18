@@ -41,7 +41,7 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.378.0",
     "medusa-react": "^9.0.0",
-    "next": "^14.0.0",
+    "next": "^14.2.0",
     "next-i18next": "^15.3.0",
     "next-intl": "^3.13.0",
     "pg": "^8.11.3",
