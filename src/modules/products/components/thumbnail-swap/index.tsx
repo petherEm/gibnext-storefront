@@ -14,7 +14,7 @@ type ThumbnailProps = {
   "data-testid"?: string
 }
 
-const Thumbnail: React.FC<ThumbnailProps> = ({
+const ThumbnailSwap: React.FC<ThumbnailProps> = ({
   thumbnail,
   images,
   size = "small",
@@ -67,4 +67,4 @@ const ImageOrPlaceholder = ({
   )
 }
 
-export default Thumbnail
+export default ThumbnailSwap
