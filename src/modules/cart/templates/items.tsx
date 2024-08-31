@@ -32,12 +32,12 @@ const ItemsTemplate = async ({
               {cartTranslations.item}
             </Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
-            <Table.HeaderCell>{cartTranslations.quantity}</Table.HeaderCell>
-            <Table.HeaderCell className="hidden small:table-cell">
+            <Table.HeaderCell>{cartTranslations.remove}</Table.HeaderCell>
+            {/* <Table.HeaderCell className="hidden small:table-cell">
               {cartTranslations.price}
-            </Table.HeaderCell>
+            </Table.HeaderCell> */}
             <Table.HeaderCell className="!pr-0 text-right">
-              {cartTranslations.total}
+              {cartTranslations.price}
             </Table.HeaderCell>
           </Table.Row>
         </Table.Header>

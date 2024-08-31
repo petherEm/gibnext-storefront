@@ -60,12 +60,12 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
             {getAmount(shipping_total)}
           </span>
         </div>
-        <div className="flex justify-between">
+        {/* <div className="flex justify-between">
           <span className="flex gap-x-1 items-center ">Taxes</span>
           <span data-testid="cart-taxes" data-value={tax_total || 0}>
             {getAmount(tax_total)}
           </span>
-        </div>
+        </div> */}
         {!!gift_card_total && (
           <div className="flex items-center justify-between">
             <span>Gift card</span>
@@ -81,7 +81,7 @@ const CartTotals: React.FC<CartTotalsProps> = ({ data }) => {
       </div>
       <div className="h-px w-full border-b border-gray-200 my-4" />
       <div className="flex items-center justify-between text-ui-fg-base mb-2 txt-medium ">
-        <span>Total</span>
+        <span>Total (incl. taxes)</span>
         <span
           className="txt-xlarge-plus"
           data-testid="cart-total"

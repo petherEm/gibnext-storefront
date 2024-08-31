@@ -56,6 +56,7 @@ const getCollectionsWithProducts = cache(
         }
 
         collection.products = response.products as unknown as Product[]
+        console.log("DUPA", collection.products)
       })
     )
 
@@ -78,6 +79,7 @@ export default async function Home({
   if (!collections || !region) {
     return null
   }
+
   return (
     <>
       <Hero translations={translations} />

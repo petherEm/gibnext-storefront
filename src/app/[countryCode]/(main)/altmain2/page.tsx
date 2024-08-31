@@ -15,6 +15,8 @@ import Intro from "@modules/home/components/intro"
 import FeaturedProducts from "@modules/home/components/featured-products"
 import FeaturedCollections from "@modules/home/components/featured-collections"
 import NewestProducts from "@modules/home/components/newest-products"
+import NewsLetterIntro from "@modules/home/components/newsletter-intro"
+import MidPicture from "@modules/home/components/mid-picutre"
 
 export const metadata: Metadata = {
   title: "ALT - Gibbarosa Pre-owned Luxury",
@@ -97,14 +99,16 @@ export default async function AltMain({
             region={region}
             countryCode={countryCode}
           />
-          <MidBanner />
         </ul>
       </div>
+      <MidPicture />
       <FeaturedCollections
         collections={collections}
         region={region}
         countryCode={countryCode}
       />
+      <MidBanner />
+      <NewsLetterIntro />
     </>
   )
 }

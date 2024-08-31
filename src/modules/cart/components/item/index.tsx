@@ -60,7 +60,12 @@ const Item = ({ item, region, type = "full" }: ItemProps) => {
       </Table.Cell>
 
       <Table.Cell className="text-left">
-        <Text className="txt-medium-plus text-ui-fg-base" data-testid="product-title">{item.title}</Text>
+        <Text
+          className="txt-medium-plus text-ui-fg-base"
+          data-testid="product-title"
+        >
+          {item.title}
+        </Text>
         <LineItemOptions variant={item.variant} data-testid="product-variant" />
       </Table.Cell>
 
@@ -68,7 +73,7 @@ const Item = ({ item, region, type = "full" }: ItemProps) => {
         <Table.Cell>
           <div className="flex gap-2 items-center w-28">
             <DeleteButton id={item.id} data-testid="product-delete-button" />
-            <CartItemSelect
+            {/* <CartItemSelect
               value={item.quantity}
               onChange={(value) => changeQuantity(parseInt(value.target.value))}
               className="w-14 h-10 p-4"
@@ -89,18 +94,18 @@ const Item = ({ item, region, type = "full" }: ItemProps) => {
                   </option>
                 )
               )}
-            </CartItemSelect>
+            </CartItemSelect> */}
             {updating && <Spinner />}
           </div>
           <ErrorMessage error={error} data-testid="product-error-message" />
         </Table.Cell>
       )}
 
-      {type === "full" && (
+      {/* {type === "full" && (
         <Table.Cell className="hidden small:table-cell">
           <LineItemUnitPrice item={item} region={region} style="tight" />
         </Table.Cell>
-      )}
+      )} */}
 
       <Table.Cell className="!pr-0">
         <span

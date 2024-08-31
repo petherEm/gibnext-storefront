@@ -5,22 +5,23 @@ import React from "react"
 
 import PlaceholderImage from "@modules/common/icons/placeholder-image"
 
-type ThumbnailProps = {
+type ThumbnailStockProps = {
   thumbnail?: string | null
   images?: MedusaImage[] | null
   size?: "small" | "medium" | "large" | "full" | "square"
   isFeatured?: boolean
   className?: string
   "data-testid"?: string
+  inStock?: boolean
 }
 
-const Thumbnail: React.FC<ThumbnailProps> = ({
+const ThumbnailStock: React.FC<ThumbnailStockProps> = ({
   thumbnail,
   images,
   size = "small",
   isFeatured,
   className,
-
+  inStock,
   "data-testid": dataTestid,
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
@@ -42,6 +43,9 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
       )}
       data-testid={dataTestid}
     >
+      <div className="absolute top-1 right-1 z-50">
+        {!inStock && <Badge className="bg-black text-white">Sold</Badge>}
+      </div>
       <ImageOrPlaceholder image={initialImage} size={size} />
     </Container>
   )
@@ -50,7 +54,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
 const ImageOrPlaceholder = ({
   image,
   size,
-}: Pick<ThumbnailProps, "size"> & { image?: string }) => {
+}: Pick<ThumbnailStockProps, "size"> & { image?: string }) => {
   return image ? (
     <Image
       src={image}
@@ -68,4 +72,4 @@ const ImageOrPlaceholder = ({
   )
 }
 
-export default Thumbnail
+export default ThumbnailStock

@@ -6,7 +6,7 @@ import { retrievePricedProductById } from "@lib/data"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { Region } from "@medusajs/medusa"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import Thumbnail from "../thumbnail"
+import ThumbnailStock from "../thumbnailStock"
 import PreviewPrice from "./price"
 
 export default async function ProductPreview({
@@ -27,6 +27,11 @@ export default async function ProductPreview({
     return null
   }
 
+  // Determine if the product is in stock
+  const inStock = pricedProduct.variants.some(
+    (variant: any) => variant.inventory_quantity > 0
+  )
+
   const { cheapestPrice } = getProductPrice({
     product: pricedProduct,
     region,
@@ -38,11 +43,13 @@ export default async function ProductPreview({
       className="group"
     >
       <div data-testid="product-wrapper">
-        <Thumbnail
+        <ThumbnailStock
           thumbnail={productPreview.thumbnail}
           size="full"
           isFeatured={isFeatured}
+          inStock={inStock}
         />
+
         <div className="flex txt-compact-medium mt-4 justify-between">
           <Text className="text-ui-fg-subtle" data-testid="product-title">
             {productPreview.title}
